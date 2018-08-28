@@ -66,6 +66,8 @@ class Connection
         'hostname'        => '',
         // 数据库名
         'database'        => '',
+
+        'authdb'         => '',
         // 是否是复制集
         'is_replica_set'  => false,
         // 用户名
@@ -151,7 +153,7 @@ class Connection
             if ($config['pk_convert_id'] && '_id' == $config['pk']) {
                 $this->config['pk'] = 'id';
             }
-            $host = 'mongodb://' . ($config['username'] ? "{$config['username']}" : '') . ($config['password'] ? ":{$config['password']}@" : '') . $config['hostname'] . ($config['hostport'] ? ":{$config['hostport']}" : '') . '/' . ($config['database'] ? "{$config['database']}" : '');
+            $host = 'mongodb://' . ($config['username'] ? "{$config['username']}" : '') . ($config['password'] ? ":{$config['password']}@" : '') . $config['hostname'] . ($config['hostport'] ? ":{$config['hostport']}" : '') . '/' . ($config['authdb'] ? "{$config['authdb']}" : '');
             if ($config['debug']) {
                 $startTime = microtime(true);
             }
