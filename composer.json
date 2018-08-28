@@ -11,9 +11,6 @@
     "require": {
 
     },
-    "require-dev":{
-        "lslcoded/think-mongo":"dev-master"
-    },
     "autoload": {
         "psr-4": {
             "think\\mongo\\": "src"
